@@ -9,7 +9,6 @@ const ToDoList = () => {
       <h2 className="text-white text-xl">ToDoList</h2>
       <div className="mt-5">
         {todos.map(todo=> 
-            
           <ToDoItem todo={todo} key={todo.id} />
             )}
       </div>
