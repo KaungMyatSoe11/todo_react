@@ -37,7 +37,6 @@ const ToDoItem = ({ todo }) => {
   };
 
   const CompleteCheckHandler = (e) => {
-    console.log(e.target.checked);
     todo.completed = e.target.checked;
     editToDo(todo);
   };
