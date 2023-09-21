@@ -7,12 +7,16 @@ import {
   RiCloseFill,
 } from "react-icons/ri";
 import { ToDoContext } from "../../context/ToDoProvider";
+
+import complete from '../../assets/completed.mp3';
+
 const ToDoItem = ({ todo }) => {
   const { deleteToDo, editToDo } = useContext(ToDoContext);
   const [isEditMode, setIsEditMode] = useState(false);
   const [isReadOnly, setIsReadOnly] = useState(true);
   const refEditInput = useRef(null);
-
+  const refAudio = useRef(new Audio(complete));
+  console.log(refAudio);
   const DeleteHandler = () => {
     deleteToDo(todo.id);
   };
@@ -41,6 +45,7 @@ const ToDoItem = ({ todo }) => {
   const CompleteCheckHandler = (e) => {
     todo.completed = e.target.checked;
     editToDo(todo);
+    refAudio.current.play()
   };
 
   return (
