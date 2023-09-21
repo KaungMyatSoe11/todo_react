@@ -26,6 +26,8 @@ const ToDoItem = ({ todo }) => {
   const CancelHandler = () => {
     setIsEditMode(false);
     setIsReadOnly(true);
+    refEditInput.current.value=todo.text
+    console.log(todo.text);
   };
 
   const SaveChangeHandler = () => {
